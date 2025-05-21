@@ -1,0 +1,43 @@
+package MeuPacote;
+
+import javax.swing.JOptionPane;
+
+public class OperacoesMatematicas {
+    public static void main(String[] args) {
+        try {
+            
+            String input1 = JOptionPane.showInputDialog("Digite o primeiro número:");
+            String input2 = JOptionPane.showInputDialog("Digite o segundo número:");
+
+       
+            double v1 = Double.parseDouble(input1);
+            double v2 = Double.parseDouble(input2);
+
+        
+            double soma = v1 + v2;
+            double subtracao = v1 - v2;
+            double multiplicacao = v1 * v2;
+            String divisao;
+
+           
+            if (v2 != 0) {
+                divisao = String.valueOf(v1 / v2);
+            } else {
+                divisao = "Indefinida (divisão por zero)";
+            }
+
+           
+            String mensagem = "Resultados:\n"
+                            + "Soma: " + soma + "\n"
+                            + "Subtração: " + subtracao + "\n"
+                            + "Multiplicação: " + multiplicacao + "\n"
+                            + "Divisão: " + divisao;
+
+            
+            JOptionPane.showMessageDialog(null, mensagem);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, insira apenas números válidos.", "Erro de entrada", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+}
